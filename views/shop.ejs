@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <main>
+        <% if (prods.length > 0 ) { %>
+            <div class="main-heading">
+                <h1>My Products</h1>
+                <p>List of all the products...</p>
+            </div>
+            <% for (let product of prods) { %>
+            <section class="grid">
+                <div class="product-grid">
+                    <h3 class="product-title">
+                        <%= product.title %>
+                    </h3>
+                    <div class="product-img">
+                        <img src="https://img1.cohimg.net/is/image/Coach/c1454_svrzg_a0?fmt=jpg&wid=680&hei=885&bgc=f0f0f0&fit=vfit&qlt=75"
+                            alt="">
+                    </div>
+                    <h2 class="product-price">
+                        $200
+                    </h2>
+                    <div class="product-description"></div>
+                    <button class="btn-add-cart">Add to Cart </button>
+                </div>
+            </section>
+            <% } %>
+            <% } else { %>
+                <h1>No Products Found!</h1>
+                <% } %>
+        </main>
+    
+</body>
+
+</html>
